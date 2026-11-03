@@ -1,0 +1,11 @@
+project: savantenvs/cli11
+target: cli11_app_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/cli11_app_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/cli11_app_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/cli11_app_fuzzer/cli11_app_fuzzer.dict
+    timeout: 5
+    max_length: 4096
